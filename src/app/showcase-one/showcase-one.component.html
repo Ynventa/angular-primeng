@@ -1,0 +1,82 @@
+
+<h3>Toggle</h3>
+<div class="ui-g">
+    <div class="ui-g-4">
+		<p-inputSwitch [(ngModel)]="checked"></p-inputSwitch>
+		<p-inputSwitch [(ngModel)]="unchecked"></p-inputSwitch>
+    </div>
+    <div class="ui-g-4">
+		<p-inputSwitch [(ngModel)]="checked" onLabel="Yes" offLabel="No"></p-inputSwitch>
+		<p-inputSwitch [(ngModel)]="unchecked" onLabel="Yes" offLabel="No"></p-inputSwitch>
+    </div>
+</div>
+
+
+<h3>Check button</h3>
+<div class="ui-g">
+    <div class="ui-g-5">
+		<p-checkbox name="groupname" value="val1" [(ngModel)]="selectedValuesChB"></p-checkbox>
+		<p-checkbox name="groupname" value="val2" [(ngModel)]="selectedValuesChB"></p-checkbox>
+    </div>
+    <div class="ui-g-7">
+		{{selectedValuesChB}}
+    </div>
+</div>
+
+
+
+<h3>Radio button</h3>
+<div class="ui-g">
+    <div class="ui-g-5">
+		<p-radioButton name="groupname" value="val1" [(ngModel)]="selectedValueRB"></p-radioButton>
+		<p-radioButton name="groupname" value="val2" [(ngModel)]="selectedValueRB"></p-radioButton>
+    </div>
+    <div class="ui-g-7">
+		{{selectedValueRB}}
+    </div>
+</div>
+
+<div class="ui-g">
+    <div class="ui-g-4">
+		<h3>Step Slider</h3>
+		<p-slider [(ngModel)]="valueStepSL" [step]="10"></p-slider>
+    </div>
+    <div class="ui-g-2">
+    	{{valueStepSL}}
+    </div>
+    <div class="ui-g-4">
+		<h3>Smooth Slider</h3>
+		<p-slider [(ngModel)]="valueSmothSL"></p-slider>
+    </div>
+    <div class="ui-g-2">
+    	{{valueSmothSL}}
+    </div>
+</div>
+
+
+<h4>Tooltips</h4>
+<div class="ui-g">
+    <div class="ui-g-3">
+		<h3>Top</h3>
+		<input type="text" pTooltip="Message above" tooltipPosition="top">
+    </div>
+    <div class="ui-g-3">
+		<h3>Bottom</h3>
+		<input type="text" pTooltip="Message below " tooltipPosition="bottom">
+    </div>
+    <div class="ui-g-3">
+		<h3>Left</h3>
+		<input type="text" pTooltip="Message on the left" tooltipPosition="left">
+    </div>
+    <div class="ui-g-3">
+		<h3>Rigth</h3>
+		<input type="text" pTooltip="Message on the right" tooltipPosition="right">
+    </div>
+
+    <div class="ui-g-3">
+		<h3>Short Tip</h3>
+		<input type="text" pTooltip="Short tip" tooltipPosition="right">
+    </div>
+</div>
+
+

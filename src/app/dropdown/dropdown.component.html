@@ -1,0 +1,15 @@
+<h3>Dropdown</h3>
+<div class="ui-g">
+    <div class="ui-g-5">
+
+		<p-dropdown [options]="cities1" [(ngModel)]="selectedCity1"></p-dropdown>
+
+    </div>
+    <div class="ui-g-7">
+    	<div *ngIf="selectedCity1">
+			id: {{selectedCity1.id}}<br>
+			name: {{selectedCity1.name}}<br>
+			code: {{selectedCity1.code}}<br>
+		</div>
+    </div>
+</div>

@@ -1,0 +1,84 @@
+<h4>Popups</h4>
+<div class="ui-g">
+    <div class="ui-g-4">
+		<button type="text" (click)="showFirstDialog()" pButton icon="fa-external-link-square" label="Select a city"></button>
+		<span *ngIf="selectedCity2">{{selectedCity2.name}}</span>
+    </div>
+
+    <div class="ui-g-4">
+		<button type="text" (click)="showSecondDialog()" pButton icon="fa-external-link-square" label="Select a city"></button>
+		<span *ngIf="selectedCity2">{{selectedCity2.name}}</span>
+		<div>Close dialog when click an opcion</div>
+    </div>
+
+    <div class="ui-g-4">
+		<button type="text" (click)="showThirdDialog()" pButton icon="fa-external-link-square" label="Select a city"></button>
+		<span *ngIf="selectedCity2">{{selectedCity2.name}}</span>
+		<div>Select with find.</div>
+    </div>
+
+</div>
+
+<div class="ui-g">
+	
+    <div class="ui-g-4">
+    	<h3>Basic table</h3>
+		<button type="text" (click)="showFourthDialog()" pButton label="Averages"></button>
+    </div>
+    <div class="ui-g-4">
+    	<h3>Table with filters</h3>
+		<button type="text" (click)="showSixthDialog()" pButton label="Filter"></button>
+    </div>
+</div>
+
+
+<div class="ui-g">
+	<h3>Notifications</h3>
+    <div class="ui-g-4">
+		<button type="text" (click)="showFifthDialog()" pButton label="Notifications"></button>
+    </div>
+</div>
+
+<p-dialog [(visible)]="display1" [(modal)]="modal" [draggable]="false" [(responsive)]="responsive">
+    <p-listbox appendTo="body" [options]="cities2" [(ngModel)]="selectedCity2" optionLabel="name" [listStyle]="{'max-height':'150px'}"></p-listbox>
+</p-dialog>
+
+<p-dialog header="Choose a city" [(visible)]="display2" [(modal)]="modal" [draggable]="false" [(responsive)]="responsive">
+    <p-listbox appendTo="body" [options]="cities2" [(ngModel)]="selectedCity2" (onChange)="closeSecondDialog()" optionLabel="name" [listStyle]="{'max-height':'150px'}">
+    </p-listbox>
+</p-dialog>
+
+<p-dialog header="Select with find" [(visible)]="display3" [(modal)]="modal" [draggable]="false" [(responsive)]="responsive">
+	<p-listbox appendTo="body" [options]="cities2" [(ngModel)]="selectedCity2" filter="filter" optionLabel="name">
+	</p-listbox>
+</p-dialog>
+
+<p-dialog header="Averages" [(visible)]="display4" [(modal)]="modal" [draggable]="false" [(responsive)]="responsive">
+	<p-dataTable appendTo="body" [value]="cars">
+	    <p-column field="vin" header="Vin"></p-column>
+	    <p-column field="year" header="Year"></p-column>
+	    <p-column field="brand" header="Brand"></p-column>
+	    <p-column field="color" header="Color"></p-column>
+	</p-dataTable>
+</p-dialog>
+
+<p-dialog header="Filter" [(visible)]="display6" [(modal)]="modal" [draggable]="false" [(responsive)]="responsive" >
+	<p-dataTable appendTo="body" [value]="cars" [editable]="true">
+	    <p-column field="vin" header="Vin" [editable]="true"></p-column>
+	    <p-column field="year" header="Year ({{yearFilter||'No Filter'}})" [filter]="true" filterMatchMode="equals" [editable]="true"></p-column>
+	    <p-column field="brand" header="Brand" [filter]="true" filterMatchMode="equals" [editable]="true">
+	        <ng-template pTemplate="filter" let-col>
+	            <p-dropdown [options]="brands" [style]="{'width':'100%'}" (onChange)="dt.filter($event.value,col.field,col.filterMatchMode)" styleClass="ui-column-filter"></p-dropdown>
+	        </ng-template>
+	    </p-column>
+	    <p-column field="color" header="Color" [editable]="true"></p-column>
+	</p-dataTable>
+</p-dialog>
+
+
+<p-dialog [showHeader]="false" [(visible)]="display5" [(modal)]="modal" [draggable]="false" [(responsive)]="responsive">
+
+		RTL orientation is enabled by adding "ui-rtl" to an ancest
+		<button pButton type="button" (click)="closeFifthDialog()" icon="fa-close"></button>
+
+</p-dialog>

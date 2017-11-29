@@ -1,0 +1,27 @@
+<h4>Buttons</h4>
+<div class="ui-g">
+    <div class="ui-g-3">
+    	<h3>Simple</h3>
+		<button pButton type="button" label="Button A"></button>
+    </div>
+
+    <div class="ui-g-3">
+    	<h3>Simple with click event</h3>
+		<button pButton type="button" (click)="onclick()" label="Click me"></button>
+    </div>
+
+    <div class="ui-g-3">
+    	<h3>Non Navigation</h3>
+		<p-toggleButton [(ngModel)]="checked" onLabel="I confirm" offLabel="I reject" onIcon="fa-check-square" offIcon="fa-square" [style]="{'width':'150px'}"></p-toggleButton>
+		<br>
+		<p-toggleButton [(ngModel)]="checked" onLabel="Select all" offLabel="Select all" onIcon="fa-check-square" offIcon="fa-square" [style]="{'width':'150px'}"></p-toggleButton>
+    </div>
+
+
+    <div class="ui-g-3">
+    	<h3>Inline Control</h3>
+		<p-selectButton [options]="types" [(ngModel)]="selectedType"></p-selectButton> {{selectedType}}
+    </div>
+
+
+</div>
